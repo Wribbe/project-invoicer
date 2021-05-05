@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"/>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Hello</h1>
+      <p>
+        We are the borgerinos
+      </p>
+    </div>
+    {% if not request.args.get('hide_print_link') %}
+      <a href="{{request.url[:-1]}}?toPdf">pdf</a>
+    {% endif %}
+  </body>
+</html>
